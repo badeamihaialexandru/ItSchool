@@ -1,4 +1,0 @@
-Dupa pull request:
--git checkout master
--git pull origin master
--git checkout -b <numeBranchNow>
