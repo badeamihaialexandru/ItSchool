@@ -64,3 +64,44 @@ def stergere_angajat(file):
         json.dump(angajati,jsonfile)
         
 #stergere_angajat("angajati.json")
+#definesc o functie care are roulul de a-l lasa pe utilizator sa manipuleze lista de angajati cu 
+#ajutorul unor comenzi predefinite. Am creat o variabila rulare si i-am atribuit valoarea ~True~
+#apoi pun utilizatorul sa aleaga una dinte comenzile predefinite. Daca alege cumva comanda de iesire 
+#atunci rulare va lua valoarea ~False~ si aplicatia se v-a inchide
+#Daca alege orice alta comana aceasa se v-a executa apoi v-a reveni la meniul principal in cazul in care
+#utilizatorul vrea sa mai faca ceva modificari
+#la prima comanda ~1~ am adaugat un while care sa permita utilizatorului sa revina la meniul principal atunci
+#cand acesta considera ca s-a uitat destul la lista de angajazti =]]
+def meniu_principal():
+    rulare = True
+    while rulare == True:
+        print("Bine ati venit la lista de angajati!")
+        print("Lista comenzi:1(afisare angajati)\n\
+                2(adaugare angajat)\n\
+                3(stergere angajat)\n\
+                4(inchidere aplicatie)\n")
+        comanda = input("Dati o comanda: ")
+        if comanda == "1":
+            afisare_angajati("angajati.json")
+            stop = ' '
+            while stop != 'gata':
+                stop = input ("Cand doriti sa reveniti la meniul principal scrieti 'gata': ")      
+            time.sleep(1)
+            os.system("cls")
+        elif comanda == "2":
+            adaugare_angajat("angajati.json")
+            time.sleep(3)
+            os.system("cls")
+        elif comanda == "3":
+            stergere_angajat("angajati.json")
+            time.sleep(3)
+            os.system("cls")
+        elif comanda == "4":
+            rulare = False
+        else:
+            print("COMANDA INVALIDA!")
+            time.sleep(2)
+            os.system("cls")
+  
+#apelez aplicatia
+meniu_principal()
