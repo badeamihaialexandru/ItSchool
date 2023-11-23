@@ -1,5 +1,5 @@
 def suma(a,b):
     return(a+b)
 
-def diferenta(a,b):
+def suma(a,b):
     return(a-b)
